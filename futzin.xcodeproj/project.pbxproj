@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592127572A32EEC000110547 /* PlayerModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127552A32EEC000110547 /* PlayerModel+CoreDataClass.swift */; };
+		592127582A32EEC000110547 /* PlayerModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127562A32EEC000110547 /* PlayerModel+CoreDataProperties.swift */; };
 		59666E832A32D692009FFDE7 /* futzinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E822A32D692009FFDE7 /* futzinApp.swift */; };
-		59666E852A32D692009FFDE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E842A32D692009FFDE7 /* ContentView.swift */; };
 		59666E872A32D693009FFDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59666E862A32D693009FFDE7 /* Assets.xcassets */; };
 		59666E8A2A32D693009FFDE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59666E892A32D693009FFDE7 /* Preview Assets.xcassets */; };
+		59666E922A32D6CA009FFDE7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E912A32D6CA009FFDE7 /* Player.swift */; };
+		59666E952A32DC8F009FFDE7 /* CreatePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E942A32DC8F009FFDE7 /* CreatePlayer.swift */; };
+		59666E982A32DD57009FFDE7 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E972A32DD57009FFDE7 /* PersistenceController.swift */; };
+		59666E9A2A32E360009FFDE7 /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E992A32E360009FFDE7 /* PlayerList.swift */; };
+		59666E9C2A32E429009FFDE7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E9B2A32E429009FFDE7 /* Home.swift */; };
+		59666E9F2A32E720009FFDE7 /* Futzin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59666E9D2A32E720009FFDE7 /* Futzin.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		592127552A32EEC000110547 /* PlayerModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlayerModel+CoreDataClass.swift"; path = "futzin/Models/PlayerModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		592127562A32EEC000110547 /* PlayerModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlayerModel+CoreDataProperties.swift"; path = "futzin/Models/PlayerModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		59666E7F2A32D692009FFDE7 /* futzin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = futzin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59666E822A32D692009FFDE7 /* futzinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = futzinApp.swift; sourceTree = "<group>"; };
-		59666E842A32D692009FFDE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		59666E862A32D693009FFDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59666E892A32D693009FFDE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		59666E912A32D6CA009FFDE7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		59666E942A32DC8F009FFDE7 /* CreatePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayer.swift; sourceTree = "<group>"; };
+		59666E972A32DD57009FFDE7 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		59666E992A32E360009FFDE7 /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
+		59666E9B2A32E429009FFDE7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		59666E9E2A32E720009FFDE7 /* Futzin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Futzin.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,9 @@
 		59666E762A32D692009FFDE7 = {
 			isa = PBXGroup;
 			children = (
+				592127552A32EEC000110547 /* PlayerModel+CoreDataClass.swift */,
+				592127562A32EEC000110547 /* PlayerModel+CoreDataProperties.swift */,
+				59666E9D2A32E720009FFDE7 /* Futzin.xcdatamodeld */,
 				59666E812A32D692009FFDE7 /* futzin */,
 				59666E802A32D692009FFDE7 /* Products */,
 			);
@@ -51,8 +68,10 @@
 		59666E812A32D692009FFDE7 /* futzin */ = {
 			isa = PBXGroup;
 			children = (
+				59666E962A32DD45009FFDE7 /* Controllers */,
+				59666E932A32DC7D009FFDE7 /* Screens */,
+				59666E902A32D6A6009FFDE7 /* Models */,
 				59666E822A32D692009FFDE7 /* futzinApp.swift */,
-				59666E842A32D692009FFDE7 /* ContentView.swift */,
 				59666E862A32D693009FFDE7 /* Assets.xcassets */,
 				59666E882A32D693009FFDE7 /* Preview Content */,
 			);
@@ -65,6 +84,32 @@
 				59666E892A32D693009FFDE7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59666E902A32D6A6009FFDE7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59666E912A32D6CA009FFDE7 /* Player.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		59666E932A32DC7D009FFDE7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				59666E942A32DC8F009FFDE7 /* CreatePlayer.swift */,
+				59666E992A32E360009FFDE7 /* PlayerList.swift */,
+				59666E9B2A32E429009FFDE7 /* Home.swift */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		59666E962A32DD45009FFDE7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				59666E972A32DD57009FFDE7 /* PersistenceController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59666E852A32D692009FFDE7 /* ContentView.swift in Sources */,
+				592127582A32EEC000110547 /* PlayerModel+CoreDataProperties.swift in Sources */,
+				59666E922A32D6CA009FFDE7 /* Player.swift in Sources */,
+				59666E952A32DC8F009FFDE7 /* CreatePlayer.swift in Sources */,
+				59666E9F2A32E720009FFDE7 /* Futzin.xcdatamodeld in Sources */,
 				59666E832A32D692009FFDE7 /* futzinApp.swift in Sources */,
+				59666E9A2A32E360009FFDE7 /* PlayerList.swift in Sources */,
+				59666E982A32DD57009FFDE7 /* PersistenceController.swift in Sources */,
+				592127572A32EEC000110547 /* PlayerModel+CoreDataClass.swift in Sources */,
+				59666E9C2A32E429009FFDE7 /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +391,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		59666E9D2A32E720009FFDE7 /* Futzin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				59666E9E2A32E720009FFDE7 /* Futzin.xcdatamodel */,
+			);
+			currentVersion = 59666E9E2A32E720009FFDE7 /* Futzin.xcdatamodel */;
+			path = Futzin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 59666E772A32D692009FFDE7 /* Project object */;
 }
