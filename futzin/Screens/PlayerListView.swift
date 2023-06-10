@@ -19,7 +19,7 @@ struct PlayerListView: View {
     @State private var selectedPlayers: Set<PlayerModel> = []
     @State private var isButtonEnabled = false
     @State private var isNavigationActive = false
-    @State private var isUpdatingPlayer = false
+    @State private var isCreatingPlayer = false
     
     var body: some View {
         List {
@@ -54,21 +54,31 @@ struct PlayerListView: View {
                 deletePlayers(at: indexSet)
             }
         }
-        .navigationBarItems(trailing: NavigationLink(
-            destination: MatchView(match: createMatch()),
-            isActive: $isNavigationActive,
-            label: {
-                Button("Submit") {
-                    isNavigationActive = true
+        .navigationBarItems(
+            leading: Button ("Add Player") {
+                isCreatingPlayer = true
+            },
+            trailing: NavigationLink(
+                destination: MatchView(match: createMatch()),
+                isActive: $isNavigationActive,
+                label: {
+                    Button("Generate Teams") {
+                        isNavigationActive = true
+                    }
                 }
-                .disabled(!isButtonEnabled)
-            }
+            )
+            .disabled(!isButtonEnabled)
         )
-        .disabled(!isButtonEnabled))
         .onChange(of: selectedPlayers) { selectedPlayers in
             isButtonEnabled = selectedPlayers.count == 20
         }
         .navigationTitle("Player List")
+        .sheet(isPresented: $isCreatingPlayer, content: {
+            PlayerCreatorView(onPlayerCreated: {
+                isCreatingPlayer = false
+            })
+        })
+        
     }
     
     private func createMatch() -> Match {

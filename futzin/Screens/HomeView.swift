@@ -16,25 +16,7 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 PlayerListView()
-                
-                Button(action: {
-                    isCreatingPlayer = true
-                }, label: {
-                    Text("Create New Player")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                })
-                .sheet(isPresented: $isCreatingPlayer, content: {
-                    PlayerCreatorView(onPlayerCreated: {
-                        isCreatingPlayer = false
-                    })
-                })
-                .padding()
             }
-            .navigationTitle("Home")
         }
     }
 }
