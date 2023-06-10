@@ -26,12 +26,16 @@ struct PlayerListView: View {
             ForEach(players, id: \.self) { player in
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(player.name ?? "")
-                            .font(.headline)
-                        Text("Stars: \(player.stars)")
-                            .font(.subheadline)
-                        Text("Position: \(player.position ?? "")")
-                            .font(.subheadline)
+                        HStack {
+                            Text(player.name ?? "")
+                                .font(.headline)
+                            
+                            Image(systemName: player.position == PlayerPosition.offensive.rawValue ? "chevron.up.circle.fill" : "chevron.down.circle.fill")
+                                .foregroundColor(player.position == PlayerPosition.offensive.rawValue ? .red : .blue)
+
+                        }
+                        
+                        StaticStarRating(rating: Int(player.stars))
                     }
                     
                     Spacer()
@@ -100,6 +104,21 @@ struct PlayerListView: View {
             name: playerModel.name ?? "Joe Doe",
             position: position
         )
+    }
+}
+
+struct StaticStarRating: View {
+    var rating: Int
+    
+    var body: some View {
+        HStack {
+            ForEach(1...5, id: \.self) { index in
+                Image(systemName: index <= rating ? "star.fill" : "star")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.yellow)
+            }
+        }
     }
 }
 
