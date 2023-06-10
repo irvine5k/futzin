@@ -69,6 +69,7 @@ struct PlayerCreatorView: View {
     }
 }
 
+
 struct StarRating: View {
     @Binding var rating: Int
     
