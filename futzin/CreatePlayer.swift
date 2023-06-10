@@ -22,8 +22,7 @@ struct PlayerCreatorView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             
-            Stepper("Stars: \(stars)", value: $stars, in: 0...10)
-                .padding()
+            StarRating(rating: $stars)
             
             Picker("Position", selection: $position) {
                 Text("Defensive").tag(PlayerPosition.defensive)
@@ -65,6 +64,24 @@ struct PlayerCreatorView: View {
                 onPlayerCreated()
             } catch {
                 print("Failed to create player: \(error)")
+            }
+        }
+    }
+}
+
+struct StarRating: View {
+    @Binding var rating: Int
+    
+    var body: some View {
+        HStack {
+            ForEach(1...5, id: \.self) { index in
+                Image(systemName: index <= rating ? "star.fill" : "star")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.yellow)
+                    .onTapGesture {
+                        rating = index
+                    }
             }
         }
     }

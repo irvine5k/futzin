@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		592127572A32EEC000110547 /* PlayerModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127552A32EEC000110547 /* PlayerModel+CoreDataClass.swift */; };
 		592127582A32EEC000110547 /* PlayerModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127562A32EEC000110547 /* PlayerModel+CoreDataProperties.swift */; };
+		5921275A2A33615000110547 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127592A33615000110547 /* Match.swift */; };
+		5921275C2A341D3300110547 /* EditPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921275B2A341D3300110547 /* EditPlayer.swift */; };
 		59666E832A32D692009FFDE7 /* futzinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E822A32D692009FFDE7 /* futzinApp.swift */; };
 		59666E872A32D693009FFDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59666E862A32D693009FFDE7 /* Assets.xcassets */; };
 		59666E8A2A32D693009FFDE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59666E892A32D693009FFDE7 /* Preview Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		592127552A32EEC000110547 /* PlayerModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlayerModel+CoreDataClass.swift"; path = "futzin/Models/PlayerModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		592127562A32EEC000110547 /* PlayerModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PlayerModel+CoreDataProperties.swift"; path = "futzin/Models/PlayerModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		592127592A33615000110547 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		5921275B2A341D3300110547 /* EditPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayer.swift; sourceTree = "<group>"; };
 		59666E7F2A32D692009FFDE7 /* futzin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = futzin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59666E822A32D692009FFDE7 /* futzinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = futzinApp.swift; sourceTree = "<group>"; };
 		59666E862A32D693009FFDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				59666E942A32DC8F009FFDE7 /* CreatePlayer.swift */,
 				59666E992A32E360009FFDE7 /* PlayerList.swift */,
 				59666E9B2A32E429009FFDE7 /* Home.swift */,
+				592127592A33615000110547 /* Match.swift */,
+				5921275B2A341D3300110547 /* EditPlayer.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -185,9 +191,11 @@
 				592127582A32EEC000110547 /* PlayerModel+CoreDataProperties.swift in Sources */,
 				59666E922A32D6CA009FFDE7 /* Player.swift in Sources */,
 				59666E952A32DC8F009FFDE7 /* CreatePlayer.swift in Sources */,
+				5921275A2A33615000110547 /* Match.swift in Sources */,
 				59666E9F2A32E720009FFDE7 /* Futzin.xcdatamodeld in Sources */,
 				59666E832A32D692009FFDE7 /* futzinApp.swift in Sources */,
 				59666E9A2A32E360009FFDE7 /* PlayerList.swift in Sources */,
+				5921275C2A341D3300110547 /* EditPlayer.swift in Sources */,
 				59666E982A32DD57009FFDE7 /* PersistenceController.swift in Sources */,
 				592127572A32EEC000110547 /* PlayerModel+CoreDataClass.swift in Sources */,
 				59666E9C2A32E429009FFDE7 /* Home.swift in Sources */,
