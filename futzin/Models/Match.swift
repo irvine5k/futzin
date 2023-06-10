@@ -17,6 +17,26 @@ struct Match {
         swapPlayersToBalancePositionDifference()
     }
     
+    func toFormattedText() -> String {
+        var text : String = ""
+        
+        for index in teams.indices {
+            let team: Team = teams[index]
+            
+            if(index > 0) {
+                text = text.appending("\n")
+                
+            }
+            text = text.appending("*Team \(index + 1)*\n")
+            
+            team.players.forEach { player in
+                text = text.appending("\(player.name)\n")
+            }
+        }
+        
+        return text
+    }
+    
     func createBalancedTeams(teamCount: Int) -> [Team] {
         guard !players.isEmpty else {
             return []
