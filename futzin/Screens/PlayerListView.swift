@@ -18,7 +18,6 @@ struct PlayerListView: View {
     
     @State private var selectedPlayers: Set<PlayerModel> = []
     @State private var isButtonEnabled = false
-    @State private var isNavigationActive = false
     @State private var isCreatingPlayer = false
     
     var body: some View {
@@ -59,13 +58,8 @@ struct PlayerListView: View {
                 isCreatingPlayer = true
             },
             trailing: NavigationLink(
-                destination: MatchView(match: createMatch()),
-                isActive: $isNavigationActive,
-                label: {
-                    Button("Generate Teams") {
-                        isNavigationActive = true
-                    }
-                }
+                "Generate Teams",
+                value: Route.match(players: Array(selectedPlayers.map(mapToPlayer)), teamCount: 4)
             )
             .disabled(!isButtonEnabled)
         )

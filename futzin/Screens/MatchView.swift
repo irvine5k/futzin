@@ -15,11 +15,23 @@ struct MatchView: View {
             ForEach(match.teams.indices, id: \.self) { index in
                 let team = match.teams[index]
                 VStack(alignment: .leading) {
-                    Text("Team \(index + 1)")
-                        .font(.headline)
+                    HStack {
+                        Text("Team \(index + 1)")
+                            .font(.headline)
                         .padding(.bottom, 4)
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
+                        Text("\(team.overallStars)")
+                    }
                     ForEach(team.players) { player in
-                        Text("\(player.name)")
+                        HStack {
+                            Text("\(player.name)")
+                            Image(systemName: player.position == .offensive ? "chevron.up.circle.fill" : "chevron.down.circle.fill")
+                                .foregroundColor(player.position == .offensive ? .red : .blue)
+                            Image(systemName: "star.fill")
+                                .foregroundColor(.yellow)
+                            Text("\(player.stars)")
+                        }
                     }
                 }
             }

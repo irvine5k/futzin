@@ -13,6 +13,7 @@
 		592127612A34D5A500110547 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127602A34D5A500110547 /* Match.swift */; };
 		592127632A34D5B000110547 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127622A34D5B000110547 /* Team.swift */; };
 		592127642A34D71D00110547 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127592A33615000110547 /* MatchView.swift */; };
+		592127692A3585DF00110547 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127682A3585DF00110547 /* Route.swift */; };
 		59666E832A32D692009FFDE7 /* futzinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E822A32D692009FFDE7 /* futzinApp.swift */; };
 		59666E872A32D693009FFDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59666E862A32D693009FFDE7 /* Assets.xcassets */; };
 		59666E8A2A32D693009FFDE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59666E892A32D693009FFDE7 /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		5921275B2A341D3300110547 /* EditPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlayerView.swift; sourceTree = "<group>"; };
 		592127602A34D5A500110547 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		592127622A34D5B000110547 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		592127682A3585DF00110547 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		59666E7F2A32D692009FFDE7 /* futzin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = futzin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59666E822A32D692009FFDE7 /* futzinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = futzinApp.swift; sourceTree = "<group>"; };
 		59666E862A32D693009FFDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				5921275E2A34D51700110547 /* Screens */,
 				59666E902A32D6A6009FFDE7 /* Models */,
 				59666E822A32D692009FFDE7 /* futzinApp.swift */,
+				592127682A3585DF00110547 /* Route.swift */,
 				59666E862A32D693009FFDE7 /* Assets.xcassets */,
 				59666E882A32D693009FFDE7 /* Preview Content */,
 			);
@@ -199,6 +202,7 @@
 				59666E922A32D6CA009FFDE7 /* Player.swift in Sources */,
 				592127632A34D5B000110547 /* Team.swift in Sources */,
 				59666E952A32DC8F009FFDE7 /* CreatePlayerView.swift in Sources */,
+				592127692A3585DF00110547 /* Route.swift in Sources */,
 				59666E9F2A32E720009FFDE7 /* Futzin.xcdatamodeld in Sources */,
 				59666E832A32D692009FFDE7 /* futzinApp.swift in Sources */,
 				59666E9A2A32E360009FFDE7 /* PlayerListView.swift in Sources */,

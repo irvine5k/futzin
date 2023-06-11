@@ -23,12 +23,4 @@ struct Team: Identifiable, Hashable, Equatable {
     var overallStars: Int {
         return players.reduce(0) { $0 + $1.stars }
     }
-    
-    var defensivePlayersCount: Int {
-        return players.filter { $0.position == .defensive }.count
-    }
-
-    var offensivePlayersCount: Int {
-        return players.filter { $0.position == .offensive }.count
-    }
 }
