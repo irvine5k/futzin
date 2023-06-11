@@ -57,19 +57,7 @@ struct PlayerListView: View {
                     isUpdatingPlayer = true
                 }
                 .sheet(isPresented: $isUpdatingPlayer, content: {
-                    EditPlayerView(initialPlayer: $selectedPlayer, onPlayerUpdated: { updatedPlayer in
-                        do {
-                            viewContext.delete(selectedPlayerModel)
-                            let updatedPlayerModel = PlayerModel(context: viewContext)
-                            updatedPlayerModel.name = updatedPlayer.name
-                            updatedPlayerModel.stars = Int16(updatedPlayer.stars)
-                            updatedPlayerModel.position = updatedPlayer.position.rawValue
-                            try viewContext.save()
-                            isUpdatingPlayer = false
-                        } catch {
-                            // handleError
-                        }
-                    })
+                    EditPlayerView(initialPlayer: $selectedPlayer, onPlayerUpdated: updatePlayer)
                 })
             }
             .onDelete { indexSet in
@@ -119,6 +107,20 @@ struct PlayerListView: View {
             try viewContext.save()
         } catch {
             // Handle error
+        }
+    }
+    
+    private func updatePlayer(updatedPlayer: Player) {
+        do {
+            viewContext.delete(selectedPlayerModel)
+            let updatedPlayerModel = PlayerModel(context: viewContext)
+            updatedPlayerModel.name = updatedPlayer.name
+            updatedPlayerModel.stars = Int16(updatedPlayer.stars)
+            updatedPlayerModel.position = updatedPlayer.position.rawValue
+            try viewContext.save()
+            isUpdatingPlayer = false
+        } catch {
+            // handleError
         }
     }
 }
