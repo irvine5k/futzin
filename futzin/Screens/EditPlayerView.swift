@@ -12,18 +12,20 @@ import SwiftUI
 struct EditPlayerView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @Binding var player: Player
-    @Binding var isUpdatingUser: Bool
+    @Binding var initialPlayer: Player?
+    @State var updatedPlayer: Player = Player(stars: 1, name: "", position: PlayerPosition.offensive)
+    var onPlayerUpdated: (Player) -> Void
+    
     
     var body: some View {
         VStack {
-            TextField("Name", text: $player.name)
+            TextField("Name", text: $updatedPlayer.name)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             
-            StarRating(rating: $player.stars)
+            StarRating(rating: $updatedPlayer.stars)
             
-            Picker("Position", selection: $player.position) {
+            Picker("Position", selection: $updatedPlayer.position) {
                 Text("Defensive").tag(PlayerPosition.defensive)
                 Text("Offensive").tag(PlayerPosition.offensive)
             }
@@ -42,16 +44,14 @@ struct EditPlayerView: View {
             Spacer()
         }
         .padding()
+        .onAppear {
+            updatedPlayer = initialPlayer!
+        }
         .navigationBarTitle("Edit Player")
     }
     
     private func savePlayer() {
-        do {
-            try viewContext.save()
-            isUpdatingUser = false
-        } catch {
-            // Handle the error
-        }
+        onPlayerUpdated(updatedPlayer)
     }
 }
 

@@ -19,6 +19,9 @@ struct PlayerListView: View {
     @State private var selectedPlayers: Set<PlayerModel> = []
     @State private var isButtonEnabled = false
     @State private var isCreatingPlayer = false
+    @State private var isUpdatingPlayer = false
+    @State private var selectedPlayer: Player!
+    @State private var selectedPlayerModel: PlayerModel!
     
     var body: some View {
         List {
@@ -48,6 +51,26 @@ struct PlayerListView: View {
                 .onTapGesture {
                     toggleSelection(for: player)
                 }
+                .onLongPressGesture {
+                    selectedPlayerModel = player
+                    selectedPlayer = Player.fromModel(player)
+                    isUpdatingPlayer = true
+                }
+                .sheet(isPresented: $isUpdatingPlayer, content: {
+                    EditPlayerView(initialPlayer: $selectedPlayer, onPlayerUpdated: { updatedPlayer in
+                        do {
+                            viewContext.delete(selectedPlayerModel)
+                            let updatedPlayerModel = PlayerModel(context: viewContext)
+                            updatedPlayerModel.name = updatedPlayer.name
+                            updatedPlayerModel.stars = Int16(updatedPlayer.stars)
+                            updatedPlayerModel.position = updatedPlayer.position.rawValue
+                            try viewContext.save()
+                            isUpdatingPlayer = false
+                        } catch {
+                            // handleError
+                        }
+                    })
+                })
             }
             .onDelete { indexSet in
                 deletePlayers(at: indexSet)
@@ -59,7 +82,7 @@ struct PlayerListView: View {
             },
             trailing: NavigationLink(
                 "Generate Teams",
-                value: Route.match(players: Array(selectedPlayers.map(mapToPlayer)), teamCount: 4)
+                value: Route.match(players: Array(selectedPlayers.map(Player.fromModel)), teamCount: 4)
             )
             .disabled(!isButtonEnabled)
         )
@@ -72,11 +95,10 @@ struct PlayerListView: View {
                 isCreatingPlayer = false
             })
         })
-        
     }
     
     private func createMatch() -> Match {
-        return Match(players: Array(selectedPlayers.map(mapToPlayer)), numberOfTeams: 4)
+        return Match(players: Array(selectedPlayers.map(Player.fromModel)), numberOfTeams: 4)
     }
     
     private func toggleSelection(for player: PlayerModel) {
@@ -99,30 +121,4 @@ struct PlayerListView: View {
             // Handle error
         }
     }
-    
-    private func mapToPlayer(playerModel: PlayerModel) -> Player {
-        let position = PlayerPosition(rawValue: playerModel.position ?? "") ?? .defensive
-
-        return Player(
-            stars: Int(playerModel.stars),
-            name: playerModel.name ?? "Joe Doe",
-            position: position
-        )
-    }
 }
-
-struct StaticStarRating: View {
-    var rating: Int
-    
-    var body: some View {
-        HStack {
-            ForEach(1...5, id: \.self) { index in
-                Image(systemName: index <= rating ? "star.fill" : "star")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.yellow)
-            }
-        }
-    }
-}
-

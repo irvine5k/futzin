@@ -44,7 +44,9 @@ struct PlayerCreatorView: View {
         }
         .padding()
     }
-    
+}
+
+extension PlayerCreatorView {
     func createPlayer() {
         withAnimation {
             let newPlayer = PlayerModel(context: viewContext)
@@ -64,25 +66,6 @@ struct PlayerCreatorView: View {
                 onPlayerCreated()
             } catch {
                 print("Failed to create player: \(error)")
-            }
-        }
-    }
-}
-
-
-struct StarRating: View {
-    @Binding var rating: Int
-    
-    var body: some View {
-        HStack {
-            ForEach(1...5, id: \.self) { index in
-                Image(systemName: index <= rating ? "star.fill" : "star")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.yellow)
-                    .onTapGesture {
-                        rating = index
-                    }
             }
         }
     }

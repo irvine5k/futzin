@@ -19,3 +19,15 @@ struct Player: Identifiable, Hashable {
     var name: String
     var position: PlayerPosition
 }
+
+extension Player {
+    static func fromModel(_ model: PlayerModel) -> Player {
+        let position = PlayerPosition(rawValue: model.position ?? "") ?? .defensive
+
+        return Player(
+            stars: Int(model.stars),
+            name: model.name ?? "Joe Doe",
+            position: position
+        )
+    }
+}
