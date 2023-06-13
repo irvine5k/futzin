@@ -11,10 +11,7 @@ import CoreData
 struct PlayerListView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \PlayerModel.name, ascending: true)],
-        animation: .default)
-    private var players: FetchedResults<PlayerModel>
+    @ObservedObject var group: GroupModel
     
     @State private var selectedPlayers: Set<PlayerModel> = []
     @State private var isButtonEnabled = false
@@ -25,20 +22,9 @@ struct PlayerListView: View {
     
     var body: some View {
         List {
-            ForEach(players, id: \.self) { player in
+            ForEach(Array(group.players as? Set<PlayerModel> ?? []), id: \.self) { player in
                 HStack {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(player.name ?? "")
-                                .font(.headline)
-                            
-                            Image(systemName: player.position == PlayerPosition.offensive.rawValue ? "chevron.up.circle.fill" : "chevron.down.circle.fill")
-                                .foregroundColor(player.position == PlayerPosition.offensive.rawValue ? .red : .blue)
-
-                        }
-                        
-                        StaticStarRating(rating: Int(player.stars))
-                    }
+                    PlayerListRow(player: player)
                     
                     Spacer()
                     
@@ -79,7 +65,9 @@ struct PlayerListView: View {
         }
         .navigationTitle("Player List")
         .sheet(isPresented: $isCreatingPlayer, content: {
-            PlayerCreatorView(onPlayerCreated: {
+            PlayerCreatorView(
+                group: group,
+                onPlayerCreated: {
                 isCreatingPlayer = false
             })
         })
@@ -99,7 +87,9 @@ struct PlayerListView: View {
     
     private func deletePlayers(at offsets: IndexSet) {
         for index in offsets {
+            let players = Array(group.players as? Set<PlayerModel> ?? [])
             let player = players[index]
+            group.removeFromPlayers(player)
             viewContext.delete(player)
         }
 
@@ -113,10 +103,12 @@ struct PlayerListView: View {
     private func updatePlayer(updatedPlayer: Player) {
         do {
             viewContext.delete(selectedPlayerModel)
+            group.removeFromPlayers(selectedPlayerModel)
             let updatedPlayerModel = PlayerModel(context: viewContext)
             updatedPlayerModel.name = updatedPlayer.name
             updatedPlayerModel.stars = Int16(updatedPlayer.stars)
             updatedPlayerModel.position = updatedPlayer.position.rawValue
+            group.addToPlayers(updatedPlayerModel)
             try viewContext.save()
             isUpdatingPlayer = false
         } catch {
@@ -124,3 +116,24 @@ struct PlayerListView: View {
         }
     }
 }
+
+struct PlayerListRow: View {
+    
+    @ObservedObject var player: PlayerModel
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text(player.name ?? "")
+                    .font(.headline)
+                
+                Image(systemName: player.position == PlayerPosition.offensive.rawValue ? "chevron.up.circle.fill" : "chevron.down.circle.fill")
+                    .foregroundColor(player.position == PlayerPosition.offensive.rawValue ? .red : .blue)
+
+            }
+            
+            StaticStarRating(rating: Int(player.stars))
+        }
+    }
+}
+

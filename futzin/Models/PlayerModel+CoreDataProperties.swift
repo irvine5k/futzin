@@ -2,7 +2,7 @@
 //  PlayerModel+CoreDataProperties.swift
 //  futzin
 //
-//  Created by Kelven Galvao on 09/06/23.
+//  Created by Kelven Galvao on 13/06/23.
 //
 //
 

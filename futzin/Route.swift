@@ -17,6 +17,7 @@ enum Route: Equatable, Hashable {
     }
     
     case match(players: [Player], teamCount: Int)
+    case group(group: GroupModel)
 }
 
 extension Route: Identifiable {
@@ -24,6 +25,8 @@ extension Route: Identifiable {
         switch self {
         case .match(_, _):
             return 0
+        case .group(_):
+            return 1
         }
     }
 }

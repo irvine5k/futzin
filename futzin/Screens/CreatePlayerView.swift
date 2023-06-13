@@ -11,6 +11,7 @@ import CoreData
 struct PlayerCreatorView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    @ObservedObject var group: GroupModel
     @State private var name = ""
     @State private var stars = 0
     @State private var position = PlayerPosition.defensive
@@ -53,6 +54,7 @@ extension PlayerCreatorView {
             newPlayer.stars = Int16(stars)
             newPlayer.name = name
             newPlayer.position = position.rawValue
+            group.addToPlayers(newPlayer)
             
             do {
                 try viewContext.save()

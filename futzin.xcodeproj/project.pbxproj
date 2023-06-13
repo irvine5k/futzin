@@ -15,6 +15,8 @@
 		592127632A34D5B000110547 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127622A34D5B000110547 /* Team.swift */; };
 		592127642A34D71D00110547 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127592A33615000110547 /* MatchView.swift */; };
 		592127692A3585DF00110547 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592127682A3585DF00110547 /* Route.swift */; };
+		5941F3362A381A10009EAEF3 /* PlayerModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5941F3342A381A10009EAEF3 /* PlayerModel+CoreDataProperties.swift */; };
+		5941F3372A381A10009EAEF3 /* GroupModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5941F3352A381A10009EAEF3 /* GroupModel+CoreDataProperties.swift */; };
 		59666E832A32D692009FFDE7 /* futzinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E822A32D692009FFDE7 /* futzinApp.swift */; };
 		59666E872A32D693009FFDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59666E862A32D693009FFDE7 /* Assets.xcassets */; };
 		59666E8A2A32D693009FFDE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59666E892A32D693009FFDE7 /* Preview Assets.xcassets */; };
@@ -24,6 +26,11 @@
 		59666E9A2A32E360009FFDE7 /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E992A32E360009FFDE7 /* PlayerListView.swift */; };
 		59666E9C2A32E429009FFDE7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59666E9B2A32E429009FFDE7 /* HomeView.swift */; };
 		59666E9F2A32E720009FFDE7 /* Futzin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59666E9D2A32E720009FFDE7 /* Futzin.xcdatamodeld */; };
+		597DF7472A3816240036DE3E /* PlayerModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597DF7462A3816240036DE3E /* PlayerModel+CoreDataProperties.swift */; };
+		59EE39D82A36A9A500B68D06 /* GroupModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE39D62A36A9A500B68D06 /* GroupModel+CoreDataClass.swift */; };
+		59EE39D92A36A9A500B68D06 /* GroupModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE39D72A36A9A500B68D06 /* GroupModel+CoreDataProperties.swift */; };
+		59EE39DB2A36AA2000B68D06 /* GroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE39DA2A36AA2000B68D06 /* GroupListView.swift */; };
+		59EE39DD2A36AB5A00B68D06 /* CreateGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EE39DC2A36AB5A00B68D06 /* CreateGroupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +42,8 @@
 		592127602A34D5A500110547 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		592127622A34D5B000110547 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		592127682A3585DF00110547 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		5941F3342A381A10009EAEF3 /* PlayerModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5941F3352A381A10009EAEF3 /* GroupModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		59666E7F2A32D692009FFDE7 /* futzin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = futzin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59666E822A32D692009FFDE7 /* futzinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = futzinApp.swift; sourceTree = "<group>"; };
 		59666E862A32D693009FFDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +54,11 @@
 		59666E992A32E360009FFDE7 /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		59666E9B2A32E429009FFDE7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		59666E9E2A32E720009FFDE7 /* Futzin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Futzin.xcdatamodel; sourceTree = "<group>"; };
+		597DF7462A3816240036DE3E /* PlayerModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EE39D62A36A9A500B68D06 /* GroupModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EE39D72A36A9A500B68D06 /* GroupModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EE39DA2A36AA2000B68D06 /* GroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListView.swift; sourceTree = "<group>"; };
+		59EE39DC2A36AB5A00B68D06 /* CreateGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +88,8 @@
 				59666E9B2A32E429009FFDE7 /* HomeView.swift */,
 				592127592A33615000110547 /* MatchView.swift */,
 				5921275B2A341D3300110547 /* EditPlayerView.swift */,
+				59EE39DA2A36AA2000B68D06 /* GroupListView.swift */,
+				59EE39DC2A36AB5A00B68D06 /* CreateGroupView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -129,7 +145,12 @@
 		59666E902A32D6A6009FFDE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5941F3342A381A10009EAEF3 /* PlayerModel+CoreDataProperties.swift */,
+				59EE39D72A36A9A500B68D06 /* GroupModel+CoreDataProperties.swift */,
+				5941F3352A381A10009EAEF3 /* GroupModel+CoreDataProperties.swift */,
 				592127552A32EEC000110547 /* PlayerModel+CoreDataClass.swift */,
+				59EE39D62A36A9A500B68D06 /* GroupModel+CoreDataClass.swift */,
+				597DF7462A3816240036DE3E /* PlayerModel+CoreDataProperties.swift */,
 				592127562A32EEC000110547 /* PlayerModel+CoreDataProperties.swift */,
 				59666E912A32D6CA009FFDE7 /* Player.swift */,
 				592127602A34D5A500110547 /* Match.swift */,
@@ -208,17 +229,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597DF7472A3816240036DE3E /* PlayerModel+CoreDataProperties.swift in Sources */,
 				592127642A34D71D00110547 /* MatchView.swift in Sources */,
 				592127582A32EEC000110547 /* PlayerModel+CoreDataProperties.swift in Sources */,
+				59EE39DB2A36AA2000B68D06 /* GroupListView.swift in Sources */,
 				59666E922A32D6CA009FFDE7 /* Player.swift in Sources */,
 				592127632A34D5B000110547 /* Team.swift in Sources */,
 				59666E952A32DC8F009FFDE7 /* CreatePlayerView.swift in Sources */,
 				592127692A3585DF00110547 /* Route.swift in Sources */,
 				59666E9F2A32E720009FFDE7 /* Futzin.xcdatamodeld in Sources */,
+				5941F3372A381A10009EAEF3 /* GroupModel+CoreDataProperties.swift in Sources */,
+				59EE39D92A36A9A500B68D06 /* GroupModel+CoreDataProperties.swift in Sources */,
 				59666E832A32D692009FFDE7 /* futzinApp.swift in Sources */,
 				59666E9A2A32E360009FFDE7 /* PlayerListView.swift in Sources */,
+				5941F3362A381A10009EAEF3 /* PlayerModel+CoreDataProperties.swift in Sources */,
 				5921275C2A341D3300110547 /* EditPlayerView.swift in Sources */,
 				59666E982A32DD57009FFDE7 /* PersistenceController.swift in Sources */,
+				59EE39DD2A36AB5A00B68D06 /* CreateGroupView.swift in Sources */,
+				59EE39D82A36A9A500B68D06 /* GroupModel+CoreDataClass.swift in Sources */,
 				592127572A32EEC000110547 /* PlayerModel+CoreDataClass.swift in Sources */,
 				59666E9C2A32E429009FFDE7 /* HomeView.swift in Sources */,
 				592127612A34D5A500110547 /* Match.swift in Sources */,

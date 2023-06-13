@@ -16,13 +16,15 @@ struct HomeView: View {
     var body: some View {
         NavigationStack(path: $presentedRoutes) {
             VStack {
-                PlayerListView()
+                GroupListView()
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
                 case .match(let players, let teamCount):
                     let match = Match(players: players, numberOfTeams: teamCount)
                     MatchView(match: match)
+                case .group(let group):
+                    PlayerListView(group: group)
                 }
             }
         }
